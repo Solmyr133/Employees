@@ -13,6 +13,11 @@
             this.age = age;
             this.salary = salary;
         }
+
+        public override string? ToString()
+        {
+            return $"Név: {this.name}";
+        }
     }
     internal class Program
     {
@@ -32,7 +37,15 @@
 
         static void Main()
         {
-            
+            // 1. - 2. Feladat
+            ReadFromFile();
+
+            // 3. Feladat
+            foreach (var item in employees)
+            {
+                Console.WriteLine(item.ToString());
+            }
+
         }
     }
 }
