@@ -73,6 +73,9 @@
             // 5. Feladat
             Console.WriteLine("\nNyugdíjhoz közel álló alkalmazottak: ");
             DisplayNearPension();
+
+            // 6. Feladat
+            Console.WriteLine($"\n{employees.Where(x => x.Salary > 50000).ToList().Count} db alkalmazott keres 50.000 felett.");
         }
     }
 }
