@@ -1,22 +1,18 @@
 ﻿namespace Employees
 {
-    class Employee {
-        private int id;
-        private string name;
-        private int age;
-        private int salary;
+    class Employee
+    {
+        public int Id { get; private set; }
+        public string Name { get; private set; }
+        public int Age { get; private set; }
+        public int Salary { get; private set; }
 
         public Employee(int id, string name, int age, int salary)
         {
-            this.id = id;
-            this.name = name;
-            this.age = age;
-            this.salary = salary;
-        }
-
-        public override string? ToString()
-        {
-            return $"Név: {this.name}";
+            this.Id = id;
+            this.Name = name;
+            this.Age = age;
+            this.Salary = salary;
         }
     }
     internal class Program
@@ -35,6 +31,19 @@
             }
         }
 
+        static void DisplayByHighestSalary()
+        {
+            int maxSalary = employees.Max(x => x.Salary);
+
+            foreach (var item in employees)
+            {
+                if (item.Salary == maxSalary)
+                {
+                    Console.WriteLine($"Név: {item.Name} Azonosító: {item.Id}");
+                }
+            }
+        }
+
         static void Main()
         {
             // 1. - 2. Feladat
@@ -43,9 +52,12 @@
             // 3. Feladat
             foreach (var item in employees)
             {
-                Console.WriteLine(item.ToString());
+                Console.WriteLine(item.Name);
             }
 
+            // 4. Feladat
+            Console.WriteLine("\nLegjobban kereső(k): ");
+            DisplayByHighestSalary();
         }
     }
 }
