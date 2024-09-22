@@ -39,7 +39,18 @@
             {
                 if (item.Salary == maxSalary)
                 {
-                    Console.WriteLine($"Név: {item.Name} Azonosító: {item.Id}");
+                    Console.WriteLine($"Név: {item.Name}\nAzonosító: {item.Id}");
+                }
+            }
+        }
+
+        static void DisplayNearPension()
+        {
+            foreach (var item in employees)
+            {
+                if (65 - item.Age == 10)
+                {
+                    Console.WriteLine($"Név: {item.Name}\nKor: {item.Age}");
                 }
             }
         }
@@ -58,6 +69,10 @@
             // 4. Feladat
             Console.WriteLine("\nLegjobban kereső(k): ");
             DisplayByHighestSalary();
+
+            // 5. Feladat
+            Console.WriteLine("\nNyugdíjhoz közel álló alkalmazottak: ");
+            DisplayNearPension();
         }
     }
 }
